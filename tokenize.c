@@ -9,7 +9,7 @@
 char **tokenize(char *line)
 {
 	int count = 0, n = strlen(line);
-	char **argv = malloc(sizeof(char*) * n);
+	char **argv = malloc(sizeof(char *) * n);
 	char *token;
 	char *delimit = " \n\t";
 

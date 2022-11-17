@@ -2,7 +2,7 @@
 
 /**
  * execute - executing function
- * @agrv: argument variable
+ * @argv: argument variable
  * Return: 1 if sucessful
  */
 
@@ -11,7 +11,7 @@ int execute(char **argv)
 	char *str, cmd[128] = "/usr/bin/";
 	pid_t pid;
 	char *env[] = {NULL};
-       
+
 	if (cmd == NULL)
 	{
 		return (0);
@@ -32,7 +32,7 @@ int execute(char **argv)
 	pid = fork();
 	if (pid == 0)
 	{
-		if(execve(cmd, argv, env) == -1)
+		if (execve(cmd, argv, env) == -1)
 		{
 			perror("Error");
 			return (-1);
