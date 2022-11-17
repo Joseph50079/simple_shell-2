@@ -8,17 +8,21 @@
 
 int execute(char **argv)
 {
-	int n = strlen(*argv);
-	char *cmd = malloc(sizeof(char) * 9 + n);
+	char *str, cmd[128] = "/usr/bin/";
 	pid_t pid;
 	char *env[] = {NULL};
-
+       
 	if (cmd == NULL)
 	{
 		return (0);
 		perror("Error no command");
 	}
-	cmd = argv[0];
+	if (strcmp(argv[0], "exit") == 0)
+	{
+		return (0);
+	}
+	str = argv[0];
+	strcat(cmd, str);
 	if (!argv)
 	{
 		return (0);
@@ -30,7 +34,6 @@ int execute(char **argv)
 	{
 		if(execve(cmd, argv, env) == -1)
 		{
-			free(cmd);
 			perror("Error");
 			return (-1);
 		}

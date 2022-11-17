@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char *line, **argv = malloc(sizeof(char*) * 128);
+	char *line, **argv;
 	int status = 1;
 
 	while (status)
