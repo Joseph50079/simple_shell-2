@@ -21,8 +21,10 @@ int _strcmp(char *s1, char *s2);
 int _strncmp(const char *first, const char *second, int n);
 /*command_handler*/
 char *_getpath(void);
-char **tokenize(char *str);
-void exec_cmd(char *c, char **cmd);
+char **tokenize(char *line);
+void execute(char **argv);
+void prompt(void);
+char *read_cline(void);
 char *append_path(char *path, char *cmd);
 char *search_path(char **p, char *cmd);
 /*built-ins*/
