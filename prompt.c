@@ -12,7 +12,7 @@ void prompt(void)
 
 	if (mode_int)
 	{
-		mode_int = isatty(STDIN_FILNO);
+		mode_int = isatty(STDIN_FILENO);
 		if (mode_int == 0)
 		{
 			perror("Error");
