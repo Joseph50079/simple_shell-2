@@ -18,14 +18,13 @@ int execute(char **argv)
 		return (0);
 		perror("Error no command");
 	}
-	cmd = "usr/bin/";
+	cmd = argv[0];
 	if (!argv)
 	{
 		return (0);
 		exit(1);
 		perror("Error");
 	}
-	cmd = strcat(cmd, argv[0]);
 	pid = fork();
 	if (pid == 0)
 	{

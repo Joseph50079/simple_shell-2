@@ -10,7 +10,7 @@ char *read_cline(void)
 {
 	char *buf = NULL;
 	ssize_t line_num;
-	size_t n = 0;
+	size_t n = 1;
 
 	line_num = getline(&buf, &n, stdin);
 	if (line_num == -1)

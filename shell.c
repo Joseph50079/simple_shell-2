@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char *line, **argv;
+	char *line, **argv = malloc(sizeof(char*) * 128);
 	int status = 1;
 
 	while (status)
@@ -17,6 +17,7 @@ int main(void)
 		line = read_cline();
 		argv = tokenize(line);
 		status = execute(argv);
+		free(argv);
 	}
 	return (0);
 }

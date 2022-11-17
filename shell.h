@@ -22,7 +22,7 @@ int _strncmp(const char *first, const char *second, int n);
 /*command_handler*/
 char *_getpath(void);
 char **tokenize(char *line);
-void execute(char **argv);
+int  execute(char **argv);
 void prompt(void);
 char *read_cline(void);
 char *append_path(char *path, char *cmd);
